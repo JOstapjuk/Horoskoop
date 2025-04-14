@@ -12,51 +12,49 @@ namespace Horoskoop
 
         public MainPage()
         {
-            Title = "Гороскоп";
+            Title = "Horoskoop";
 
             zodiacSigns = new List<ZodiacSign>
             {
-                new ZodiacSign("Овен", "21 марта — 19 апреля", "♈", "Огонь", "Марс", "Смелость, энергия, амбиции"),
-                new ZodiacSign("Телец", "20 апреля — 20 мая", "♉", "Земля", "Венера", "Надёжность, терпение, практичность"),
-                new ZodiacSign("Близнецы", "21 мая — 20 июня", "♊", "Воздух", "Меркурий", "Интеллект, гибкость, общительность"),
-                new ZodiacSign("Рак", "21 июня — 22 июля", "♋", "Вода", "Луна", "Чувствительность, забота, интуиция"),
-                new ZodiacSign("Лев", "23 июля — 22 августа", "♌", "Огонь", "Солнце", "Уверенность, щедрость, лидерство"),
-                new ZodiacSign("Дева", "23 августа — 22 сентября", "♍", "Земля", "Меркурий", "Аналитичность, аккуратность, реализм"),
-                new ZodiacSign("Весы", "23 сентября — 22 октября", "♎", "Воздух", "Венера", "Дипломатия, баланс, стиль"),
-                new ZodiacSign("Скорпион", "23 октября — 21 ноября", "♏", "Вода", "Плутон", "Страсть, глубина, решительность"),
-                new ZodiacSign("Стрелец", "22 ноября — 21 декабря", "♐", "Огонь", "Юпитер", "Оптимизм, свобода, философия"),
-                new ZodiacSign("Козерог", "22 декабря — 19 января", "♑", "Земля", "Сатурн", "Дисциплина, амбиции, стабильность"),
-                new ZodiacSign("Водолей", "20 января — 18 февраля", "♒", "Воздух", "Уран", "Индивидуальность, изобретательность"),
-                new ZodiacSign("Рыбы", "19 февраля — 20 марта", "♓", "Вода", "Нептун", "Эмпатия, мечтательность, креативность")
+                new ZodiacSign("Jäär", "21. märts — 19. aprill", "♈", "Tuli", "Marss", "Julgus, energia, ambitsioonikus"),
+                new ZodiacSign("Sõnn", "20. aprill — 20. mai", "♉", "Maa", "Veenus", "Usaldusväärsus, kannatlikkus, praktilisus"),
+                new ZodiacSign("Kaksikud", "21. mai — 20. juuni", "♊", "Õhk", "Merkuur", "Intelligentsus, paindlikkus, seltskondlikkus"),
+                new ZodiacSign("Vähk", "21. juuni — 22. juuli", "♋", "Vesi", "Kuu", "Tundlikkus, hoolivus, intuitsioon"),
+                new ZodiacSign("Lõvi", "23. juuli — 22. august", "♌", "Tuli", "Päike", "Enesekindlus, heldus, juhtimine"),
+                new ZodiacSign("Neitsi", "23. august — 22. september", "♍", "Maa", "Merkuur", "Analüüsivõime, täpsus, realism"),
+                new ZodiacSign("Kaalud", "23. september — 22. oktoober", "♎", "Õhk", "Veenus", "Diplomaatia, tasakaal, stiil"),
+                new ZodiacSign("Skorpion", "23. oktoober — 21. november", "♏", "Vesi", "Pluuto", "Kirglikkus, sügavus, otsusekindlus"),
+                new ZodiacSign("Ambur", "22. november — 21. detsember", "♐", "Tuli", "Jupiter", "Optimism, vabadus, filosoofia"),
+                new ZodiacSign("Kaljukits", "22. detsember — 19. jaanuar", "♑", "Maa", "Saturn", "Distsipliin, ambitsioonikus, stabiilsus"),
+                new ZodiacSign("Veevalaja", "20. jaanuar — 18. veebruar", "♒", "Õhk", "Uraan", "Isikupära, leidlikkus"),
+                new ZodiacSign("Kalad", "19. veebruar — 20. märts", "♓", "Vesi", "Neptuun", "Kaastunne, unistavus, loovus")
             };
 
-            // Random data for quote and fact
             var dailyQuotes = new[]
             {
-                "«Звёзды склоняют, но не обязывают.» – Публий Сир",
-                "«Пока ты веришь в чудо — оно возможно.»",
-                "«Познавай себя — и ты познаешь Вселенную.»",
-                "«Судьба написана в звёздах, но выбор — за тобой.»",
-                "«Каждое утро — новая карта на небесах.»"
+                "„Tähed mõjutavad, kuid ei sunni.” – Publilius Syrus",
+                "„Niikaua kui sa usud imesse – see on võimalik.”",
+                "„Tunne iseennast – ja sa tunnetad Universumit.”",
+                "„Saatus on kirjutatud tähtedesse, aga valik on sinu.”",
+                "„Iga hommik toob uue kaardi taevas.”"
             };
 
             var dailyFacts = new[]
             {
-                "Знак Весов — единственный неодушевлённый символ в зодиаке.",
-                "Близнецы управляются Меркурием — планетой общения.",
-                "Рыбы — последний знак, объединяющий черты всех остальных.",
-                "У каждого знака есть своя стихия: Огонь, Земля, Воздух, Вода.",
-                "Козерог — символ терпения и дисциплины в астрологии."
+                "Kaalude märk on ainus elutu sümbol sodiaagis.",
+                "Kaksikuid juhib Merkuur – suhtlemise planeet.",
+                "Kalad on viimane märk, mis ühendab kõikide teiste omadusi.",
+                "Igal tähemärgil on oma element: Tuli, Maa, Õhk, Vesi.",
+                "Kaljukits on astroloogias kannatlikkuse ja distsipliini sümbol."
             };
 
             var rnd = new Random();
             string randomQuote = dailyQuotes[rnd.Next(dailyQuotes.Length)];
             string randomFact = dailyFacts[rnd.Next(dailyFacts.Length)];
 
-            // SEARCH
             var searchBar = new SearchBar
             {
-                Placeholder = "Поиск знака...",
+                Placeholder = "Otsi tähemärki...",
                 Margin = new Thickness(10)
             };
 
@@ -87,7 +85,7 @@ namespace Horoskoop
 
             var randomButton = new Button
             {
-                Text = "🎲 Случайный знак",
+                Text = "🎲 Juhuslik märk",
                 BackgroundColor = Colors.MediumPurple,
                 TextColor = Colors.White,
                 Margin = new Thickness(10)
@@ -102,7 +100,7 @@ namespace Horoskoop
 
             var menuPage = new ContentPage
             {
-                Title = "Содержание",
+                Title = "Menüü",
                 Content = new StackLayout
                 {
                     Children =
@@ -115,11 +113,10 @@ namespace Horoskoop
                 }
             };
 
-            // MAIN DETAIL PAGE
             Flyout = menuPage;
             Detail = new NavigationPage(new ContentPage
             {
-                Title = "Главная",
+                Title = "Avaleht",
                 Content = new ScrollView
                 {
                     Content = new StackLayout
@@ -130,7 +127,7 @@ namespace Horoskoop
                         {
                             new Label
                             {
-                                Text = "🌌 Добро пожаловать в астромир!",
+                                Text = "🌌 Tere tulemast astroloogiamaailma!",
                                 FontSize = 24,
                                 FontAttributes = FontAttributes.Bold,
                                 HorizontalOptions = LayoutOptions.Center
@@ -143,19 +140,19 @@ namespace Horoskoop
                             },
                             new Label
                             {
-                                Text = $"✨ Цитата дня:\n{randomQuote}",
+                                Text = $"✨ Päeva tsitaat:\n{randomQuote}",
                                 FontSize = 16,
                                 TextColor = Colors.Indigo
                             },
                             new Label
                             {
-                                Text = $"🪐 Астрологический факт:\n{randomFact}",
+                                Text = $"🪐 Astroloogiline fakt:\n{randomFact}",
                                 FontSize = 14,
                                 TextColor = Colors.DarkSlateGray
                             },
                             new Button
                             {
-                                Text = "🔮 Показать случайный гороскоп",
+                                Text = "🔮 Näita juhuslikku horoskoopi",
                                 BackgroundColor = Colors.MediumPurple,
                                 TextColor = Colors.White,
                                 CornerRadius = 20,

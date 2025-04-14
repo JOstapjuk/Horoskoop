@@ -27,21 +27,21 @@ public partial class ZodiacPage : ContentPage
 
         var infoLabel = new Label
         {
-            Text = $"Даты: {sign.Dates}\nСтихия: {sign.Element}\nПланета: {sign.Planet}\nЧерты: {sign.Traits}",
+            Text = $"Kuupäevad: {sign.Dates}\nElement: {sign.Element}\nPlaneet: {sign.Planet}\nOmadused: {sign.Traits}",
             Margin = new Thickness(10)
         };
 
         todayHoroscopeLabel = new Label
         {
-            Text = GenerateDailyHoroscope("Общий"),
+            Text = GenerateDailyHoroscope("Üldine"),
             Margin = new Thickness(10),
             FontSize = 16
         };
 
         var picker = new Picker
         {
-            Title = "Тип гороскопа",
-            ItemsSource = new List<string> { "Общий", "Любовь", "Финансы" },
+            Title = "Horoskoobi tüüp",
+            ItemsSource = new List<string> { "Üldine", "Armastus", "Raha" },
             SelectedIndex = 0
         };
 
@@ -53,17 +53,17 @@ public partial class ZodiacPage : ContentPage
 
         var likeButton = new Button
         {
-            Text = "❤️ Мне нравится",
+            Text = "❤️ Mulle meeldib",
             BackgroundColor = Colors.LightPink
         };
 
         int likes = 0;
-        var likeLabel = new Label { Text = "Нравится: 0", HorizontalOptions = LayoutOptions.Center };
+        var likeLabel = new Label { Text = "Meeldimisi: 0", HorizontalOptions = LayoutOptions.Center };
 
         likeButton.Clicked += async (s, e) =>
         {
             likes++;
-            likeLabel.Text = $"Нравится: {likes}";
+            likeLabel.Text = $"Meeldimisi: {likes}";
             await likeButton.ScaleTo(1.2, 100);
             await likeButton.ScaleTo(1.0, 100);
         };
@@ -91,68 +91,66 @@ public partial class ZodiacPage : ContentPage
     {
         var moods = new[]
         {
-        "радостным и полным энергии",
-        "спокойным и уравновешенным",
-        "немного напряжённым, но сосредоточенным",
-        "вдохновлённым и креативным",
-        "мечтательным и отстранённым",
-        "взволнованным новыми возможностями",
-        "целеустремлённым и уверенным в себе",
-        "немного рассеянным, но открытым"
-    };
+            "rõõmus ja energiline",
+            "rahulik ja tasakaalukas",
+            "veidi pinges, aga keskendunud",
+            "inspireeritud ja loominguline",
+            "unistav ja eemalolev",
+            "erutatud uutest võimalustest",
+            "eesmärgile pühendunud ja enesekindel",
+            "veidi hajameelne, aga avatud"
+        };
 
         var love = new[]
         {
-        "Романтика витает в воздухе — прислушайтесь к сердцу.",
-        "Проявите терпение и заботу — это укрепит отношения.",
-        "Хорошее время для тёплых признаний.",
-        "Новые чувства могут прийти неожиданно.",
-        "Старые отношения могут заиграть новыми красками.",
-        "Будьте открыты для флирта — это может стать началом чего-то большего.",
-        "Важно доверие — без него не построить крепкий союз.",
-        "Побалуйте любимого человека — даже мелочи имеют значение."
-    };
+            "Romantika on õhus — kuula oma südant.",
+            "Ole kannatlik ja hooliv — see tugevdab suhet.",
+            "Hea aeg soojadeks ülestunnistusteks.",
+            "Uued tunded võivad tulla ootamatult.",
+            "Vanad suhted võivad saada uue hingamise.",
+            "Ole avatud flirtimiseks — see võib olla millegi suure algus.",
+            "Usaldus on oluline — ilma selleta pole tugevat liitu.",
+            "Hellita oma kallimat — isegi pisiasjad loevad."
+        };
 
         var money = new[]
         {
-        "Финансовая удача на вашей стороне — но не рискуйте зря.",
-        "Избегайте импульсивных покупок сегодня.",
-        "Хороший день для планирования бюджета или инвестиций.",
-        "Может поступить неожиданный доход — держите глаза открытыми.",
-        "Остерегайтесь мошенников и проверьте свои траты.",
-        "Маленькая экономия сегодня — большая стабильность завтра.",
-        "Возможность карьерного роста рядом — не упустите шанс.",
-        "Ваше упорство принесёт плоды, даже если не сразу."
-    };
+            "Rahaline õnn on sinu poolel — aga väldi tarbetut riski.",
+            "Väldi täna impulsiivseid oste.",
+            "Hea päev eelarve planeerimiseks või investeerimiseks.",
+            "Võib tulla ootamatu sissetulek — hoia silmad lahti.",
+            "Ole ettevaatlik petturite suhtes ja kontrolli oma kulutusi.",
+            "Väike sääst täna — suurem stabiilsus homme.",
+            "Karjäärivõimalus on lähedal — ära maga seda maha.",
+            "Sinu järjekindlus toob tulemusi, isegi kui mitte kohe."
+        };
 
         var advice = new[]
         {
-        "Доверяйте себе — вы на правильном пути.",
-        "Будьте открыты к новому, даже если это пугает.",
-        "Не бойтесь перемен — они несут рост.",
-        "Позаботьтесь о себе: ментально и физически.",
-        "Интуиция сегодня особенно сильна — слушайте её.",
-        "День подходит для самоанализа и перезагрузки.",
-        "Сосредоточьтесь на главном и не распыляйтесь.",
-        "Проведите время с близкими — это даст силы."
-    };
+            "Usalda ennast — oled õigel teel.",
+            "Ole avatud uuele, isegi kui see hirmutab.",
+            "Ära karda muutusi — need toovad kasvu.",
+            "Hoolitse enda eest: vaimselt ja füüsiliselt.",
+            "Intuitsioon on täna eriti tugev — kuula seda.",
+            "Sobiv päev eneseanalüüsiks ja taaskäivituseks.",
+            "Keskendu olulisele ja ära hajuta oma tähelepanu.",
+            "Veeda aega lähedastega — see annab jõudu."
+        };
 
-        // Создание уникального ключа на каждый день и тип
         string key = currentSign.Name + DateTime.Today.ToString("yyyyMMdd") + type;
         int hash = key.GetHashCode();
         var rnd = new Random(hash);
 
         string mood = moods[rnd.Next(moods.Length)];
-        string baseText = $"Сегодня вы чувствуете себя {mood}. ";
+        string baseText = $"Täna tunned end {mood}. ";
 
         string addition = type switch
         {
-            "Любовь" => love[rnd.Next(love.Length)],
-            "Финансы" => money[rnd.Next(money.Length)],
+            "Armastus" => love[rnd.Next(love.Length)],
+            "Raha" => money[rnd.Next(money.Length)],
             _ => advice[rnd.Next(advice.Length)]
         };
 
         return baseText + addition;
     }
-
 }
